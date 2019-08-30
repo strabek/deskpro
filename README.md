@@ -9,6 +9,7 @@ Usage:
 - Tickets page: /tickets e.g.http://deskpro.local/tickets
 - Organizations page: /organizations e.g. http://deskpro.local/organizations
 
+Code location:
 - Controllers: src/AppBundle/Controllers
 - Service: src/AppBundle/Service
 - Forms: src/AppBundle/Form
