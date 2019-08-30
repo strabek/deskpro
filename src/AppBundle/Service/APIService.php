@@ -14,6 +14,7 @@ class APIService
     private $request;
     private $method = 'GET';
     private $data = [];
+    private $query = [];
 
     public function __construct($apiBaseUri, $apiKey)
     {
@@ -32,6 +33,7 @@ class APIService
             'Authorization' =>  $this->apiKey,
         ],
         'json' => $this->data,
+        'query' => $this->query
     ]);
       
     	return $this;
@@ -42,21 +44,28 @@ class APIService
       return $this->request->getBody()->getContents();
     }
     
-    public function setData($data)
+    public function setData(array $data)
     {
       $this->data = $data;
 
       return $this;
     }
 	
-    public function setUri($uri)
+    public function setUri(string $uri)
     {
       $this->uri = $uri;
 
       return $this;
     }
     
-    public function setMethod($method)
+    public function setQuery(array $query)
+    {
+      $this->query = $query;
+
+      return $this;
+    }
+
+    public function setMethod(string  $method)
     {
       $this->method = $method;
 

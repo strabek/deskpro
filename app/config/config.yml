@@ -12,6 +12,7 @@ parameters:
   api_users_endpoint: "/api/v2/people/"
   api_tickets_endpoint: "/api/v2/tickets/"
   api_organizations_endpoint: "/api/v2/organizations/"
+  api_default_limit: 5
 
 framework:
   #esi: ~

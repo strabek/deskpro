@@ -21,6 +21,7 @@ class TicketController extends Controller
       try {
         $apiConn
           ->setUri(rtrim($this->container->getParameter('api_tickets_endpoint'), '/'))
+          // ->setQuery(['limit' => 5]) // Adding limit here cause a problem and throws an error: 400 Bad request
           ->connect()
         ;
       } catch (\Exception $e) {

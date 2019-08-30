@@ -21,6 +21,7 @@ class UserController extends Controller
       try {
         $apiConn
           ->setUri(rtrim($this->container->getParameter('api_users_endpoint'), '/'))
+          ->setQuery(['limit' => $this->container->getParameter('api_default_limit')])
           ->connect()
         ;
       } catch (\Exception $e) {

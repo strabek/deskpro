@@ -21,6 +21,7 @@ class OrganizationController extends Controller
       try {
         $apiConn
           ->setUri(rtrim($this->container->getParameter('api_organizations_endpoint'), '/'))
+          ->setQuery(['limit' => $this->container->getParameter('api_default_limit')])
           ->connect()
         ;
       } catch (\Exception $e) {
