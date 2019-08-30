@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+  <table>
+    {% for organization in organizations %}
+      <tr>
+        <td>
+          <a href="{{ path('organization_details', {id: organization.id}) }}">{{ organization.name }}</a>
+          --
+          <a href="{{ path('organization_update', {id: organization.id}) }}">update</a>
+          --
+          <a href="{{ path('organization_delete', {id: organization.id}) }}">delete</a>
+        </td>
+      </tr>
+      <tr>
+      {% endfor %}
+    </table>
+    {% block stylesheets %}{% endblock %}
+
+  {% endblock %}

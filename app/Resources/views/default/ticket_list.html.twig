@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+  <table>
+    {% for ticket in tickets %}
+      <tr>
+        <td>
+          <a href="{{ path('ticket_details', {id: ticket.id}) }}">{{ ticket.subject }}</a>
+          --
+          <a href="{{ path('ticket_update', {id: ticket.id}) }}">update</a>
+          --
+          <a href="{{ path('ticket_delete', {id: ticket.id}) }}">delete</a>
+        </td>
+      </tr>
+      <tr>
+      {% endfor %}
+    </table>
+    {% block stylesheets %}{% endblock %}
+
+  {% endblock %}

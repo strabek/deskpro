@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+  <ul>
+    <li><a href="{{ path('user_list') }}">users</a></li>
+    <li><a href="{{ path('organization_list') }}">organisations</a></li>
+    <li><a href="{{ path('ticket_list') }}">tickets</a></li>
+  </ul>
+{% endblock %}
